@@ -19,7 +19,7 @@ describe('filter',()=>{
         cy.get('.filter-button').click()
         cy.get(':nth-child(1) > .dropdown-title > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').dblclick()
         cy.get('.Not-found-container').should('not.contain', 'No results available.');
-    })
+    })   
     it("TC-0014 : should be responsive", () => {
         cy.visit('https://stacksinfo.web.app/');
         cy.viewport(412, 915);
@@ -36,8 +36,5 @@ describe('filter',()=>{
         cy.get('.clear-all-btn').click();
     
         cy.get('.selected-filters').should('not.exist');
-    });
-    
-    
-
+    }); 
 })
