@@ -16,3 +16,17 @@ describe("TC-0011 : Test the output of exist value",()=>{
      cy.get('.Not-found-container').should('not.contain', 'No results available.');
   })  
 })
+
+describe("TC-0010 : This test scenario verifies the functionality of the search if we search about company,city ,technology and Languege",()=>{
+  it("should return cards containing all the requirements that were searched for",()=>{
+    cy.visit('https://stacksinfo.web.app/');
+    cy.get('.search-bar').type('Asal Backend Rawabi c++')
+    cy.get('.company-name').should('contain','ASAL Technologies')
+    cy.get('.slick-active > :nth-child(1) > .slider-element').should('contain','Backend')
+    cy.get('.company-slogan').should('contain','Rawabi')
+    cy.get(':nth-child(1) > .card-body > .card-result > :nth-child(1) > .result-item')
+  .invoke('attr', 'alt')
+  .should('contain', 'C++');
+
+  })
+})
