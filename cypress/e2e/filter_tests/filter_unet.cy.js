@@ -7,5 +7,21 @@ describe('TC-0017 : select one item in the filter',()=>{
         cy.get(':nth-child(1) > .dropdown-title > :nth-child(1) > :nth-child(2)').click()
         cy.get('.Not-found-container').should('not.contain', 'No results available.');
     })
+
+    it("TC-0018 : shoud return  mixes company have same options I selected",()=>{
+        cy.visit('https://stacksinfo.web.app/');
+        cy.get('.filter-button').click()
+        cy.get(':nth-child(1) > .dropdown-title > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+        cy.get(':nth-child(2) > .dropdown-title > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+        cy.get('.Not-found-container').should('not.contain', 'No results available.');
+    })
+    it.only("TC-0019 : should return the content of checkbox i selected",()=>{
+        cy.visit('https://stacksinfo.web.app/');
+        cy.get('.filter-button').click()
+        cy.get(':nth-child(1) > .dropdown-title > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').dblclick()
+        cy.get('.Not-found-container').should('not.contain', 'No results available.');
+    })
+    
     
 })
+
