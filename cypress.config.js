@@ -7,5 +7,5 @@ module.exports = defineConfig({
     },
   },
   watchForFileChanges: false,
-  defaultCommandTimeout: 500000
+  defaultCommandTimeout: 5000
 });

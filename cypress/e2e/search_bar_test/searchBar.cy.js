@@ -8,5 +8,4 @@ describe('TC-005:Search about exist value', () => {
     cy.get('.card-container > :nth-child(2)').should('exist');
     cy.get(':nth-child(1) > .card-body > .simple-slider > .slick-slider > .slick-list > .slick-track > .slick-active > :nth-child(1) > .slider-element').should('have.text', 'Frontend');
   });
-  
 });
