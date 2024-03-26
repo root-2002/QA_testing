@@ -54,8 +54,6 @@ describe('TC-006:Search for Non-Existent Value' , ()=>{
       cy.contains('.card-body', 'Frontend').should('exist');
   });
   });
-  })  
-})
 
 describe("TC-0010 : This test scenario verifies the functionality of the search if we search about company,city ,technology and Languege",()=>{
   it("should return cards containing all the requirements that were searched for",()=>{
