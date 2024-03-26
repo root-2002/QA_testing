@@ -64,3 +64,14 @@ describe("TC-0010: This test scenario verifies the functionality of the search i
       .should('contain', 'C++');
   });
 });
+
+describe("TC-0012: Test search about backend field", () => {
+  it("should return all companies that has backend servises", () => {
+    cy.visit("https://stacksinfo.web.app/");
+    cy.get(".search-bar").type("Backend");
+    cy.get(".slick-active > :nth-child(1) > .slider-element").should("contain", "Backend");
+    cy.get(".page-body").should("contain", ".card-container > :nth-child(4)");
+  });
+});
+
+

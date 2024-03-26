@@ -41,3 +41,17 @@ it("TC-0013 : should ", () => {
     
 })
 
+
+describe("TC-0012: Test search about backend field then filter to backend", () => {
+  it.only("should return all companies that has backend servises", () => {
+    cy.visit("https://stacksinfo.web.app/");
+    cy.get(".search-bar").type("Backend");
+    cy.get(".search-window-overlay").click();
+    cy.get(".filter-button").click();
+    cy.get(
+      ":nth-child(1) > .dropdown-title > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input"
+    ).click();
+    cy.get(".page-body").should("contain", ".card-container > :nth-child(4)");
+  });
+});
+
